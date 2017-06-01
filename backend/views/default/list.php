@@ -22,7 +22,7 @@ BootstrapAsset::register($this);
 <div class="row">
     <div class="col-md-12">
         <h1>
-            <?= Newsletter::t('backend', 'Lista de clientes suscritos') ?>
+            <?= 'Lista de clientes suscritos' ?>
             <?= Html::a('Descargar CSV', Url::toRoute('download-csv'), [
                     'class' => 'btn btn-sm btn-success pull-right'
                 ]) ?>

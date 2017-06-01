@@ -25,16 +25,16 @@ class DefaultController extends Controller
      */
     public function actionSubscribeEmail()
     {
-        if(Yii::$app->request->isPost) {
+        if (Yii::$app->request->isPost) {
             $client = new Client(['scenario' => Client::SCENARIO_EMAIL]);
             $client->load(Yii::$app->request->post());
 
-            $result_message = Newsletter::t('frontend', 'Error!');
-            if($client->validate() && $client->save()) {
-                $result_message = Newsletter::t('frontend', 'Success!');
+            $result_message = '¡Lo sentimos! Ocurrió un error al suscribirlo.  Por favor, inténtelo de nuevo más tarde.';
+            if ($client->validate() && $client->save()) {
+                $result_message = '¡Felicidades! Se ha suscrito con éxito a nuestro boletín.';
             }
 
-            if(Yii::$app->request->isAjax) {
+            if (Yii::$app->request->isAjax) {
                 return $result_message;
             }
 
@@ -42,7 +42,7 @@ class DefaultController extends Controller
             return $this->redirect(Yii::$app->request->referrer);
         }
 
-        $error_mesage = Newsletter::t('error', 'Page not found!');
+        $error_mesage = 'Página no encontrada';
         throw new NotFoundHttpException($error_mesage);
     }
 

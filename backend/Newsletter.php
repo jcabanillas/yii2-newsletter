@@ -16,8 +16,4 @@ class Newsletter extends Module
      */
     public $controllerNamespace = 'jcabanillas\newsletter\backend\controllers';
 
-    public static function t($category, $message, $params = [], $language = null)
-    {
-        return Yii::t('newsletter.' . $category, $message, $params, $language);
-    }
 }

@@ -24,6 +24,6 @@ $form = ActiveForm::begin([
     'enableClientValidation' => false
 ]);
 ?>
-    <?= $form->field($model, 'email')->textInput()->label(false) ?>
-    <?= Html::submitButton('Subscribe', ['class' => 'btn btn-success']) ?>
+    <?= $form->field($model, 'email')->textInput(['placeholder' => 'E-mail', 'class' => 'c-input form-control c-square c-theme'])->label(false) ?>
+    <?= Html::submitButton('Suscribir', ['class' => 'btn c-theme-btn c-theme-border c-btn-square c-btn-uppercase c-font-16']) ?>
 <?php $form->end() ?>
